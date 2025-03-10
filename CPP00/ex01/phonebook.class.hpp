@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:31:42 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/10 19:40:24 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/10 21:59:37 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ private:
 	int		nb_contact;
 public:
 	phonebook(void);
-	void	add_contact(void);
-	void	show_contact(void);
-	// std::string trunc_data(std::string data);
-	// void	phonebook::show_contact(phonebook directory, int j);
+	void		add_contact(void);
+	void		show_contact(void);
+	void		search_contact(void);
 	~phonebook(void);
 };
 

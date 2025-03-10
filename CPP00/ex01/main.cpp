@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:50:41 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/10 19:59:08 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/10 22:08:33 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int	main(void)
 
 	while (1)
 	{
-		std::cin >> buff;
-		if (buff == "ADD")
+		if (!std::getline(std::cin, buff))
+			exit (EXIT_SUCCESS);
+		else if (buff == "ADD")
 			directory.add_contact();
 		else if (buff == "SEARCH")
 			directory.show_contact();

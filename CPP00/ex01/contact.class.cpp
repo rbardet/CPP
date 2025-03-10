@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:53:26 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/10 19:59:07 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:09:43 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,37 @@ void contact::contact_data()
 
 void contact::add_contact()
 {
-	std::cout << "first name : ";
-	std::getline(std::cin, firstname);
-	std::cout << "last name : ";
-	std::getline(std::cin, lastname);
-	std::cout << "nickname : ";
-	std::getline(std::cin, nickname);
-	std::cout << "phone number : ";
-	std::getline(std::cin, phonenumber);
-	std::cout << "darkest secret : ";
-	std::getline(std::cin, darksecret);
+	do
+	{
+		std::cout << "first name : ";
+		if (!std::getline(std::cin, firstname))
+			return ;
+	} while (firstname.empty());
+
+	do
+	{
+		std::cout << "last name : ";
+		if (!std::getline(std::cin, lastname))
+			return ;
+	} while (lastname.empty());
+	do
+	{
+		std::cout << "nickname : ";
+		if (!std::getline(std::cin, nickname))
+			return ;
+	} while (nickname.empty());
+	do
+	{
+		std::cout << "phone number : ";
+		if (!std::getline(std::cin, phonenumber))
+			return ;
+	} while (phonenumber.empty());
+	do
+	{
+		std::cout << "darkest secret : ";
+		if (!std::getline(std::cin, darksecret))
+			return ;
+	} while (darksecret.empty());
 }
 
 std::string trunc_data(std::string data)
