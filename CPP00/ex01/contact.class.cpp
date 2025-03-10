@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:53:26 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 00:09:43 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:21:57 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void contact::add_contact()
 		if (!std::getline(std::cin, firstname))
 			return ;
 	} while (firstname.empty());
-
 	do
 	{
 		std::cout << "last name : ";
