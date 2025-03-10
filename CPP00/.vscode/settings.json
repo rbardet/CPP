@@ -60,6 +60,8 @@
 		"semaphore": "cpp",
 		"__nullptr": "cpp",
 		"__bit_reference": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"__locale": "cpp",
+		"locale": "cpp"
 	}
 }
