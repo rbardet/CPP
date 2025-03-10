@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:50:41 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/10 17:54:02 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/10 19:59:08 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@ int	main(void)
 {
 	phonebook		directory;
 	std::string		buff;
-	int				i = 0;
 
 	while (1)
 	{
 		std::cin >> buff;
 		if (buff == "ADD")
-		{
-			directory.contacts[i % 8] = add_contact(directory.contacts[i % 8]);
-			i++;
-		}
+			directory.add_contact();
 		else if (buff == "SEARCH")
-			show_contact(directory, i);
+			directory.show_contact();
 		else if (buff == "EXIT")
 			exit (EXIT_SUCCESS);
 		else
