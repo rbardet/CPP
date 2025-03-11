@@ -62,5 +62,6 @@
 		"__nullptr": "cpp",
 		"locale": "cpp",
 		"__locale": "cpp"
-	}
+	},
+	"C_Cpp.errorSquiggles": "disabled"
 }

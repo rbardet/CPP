@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 00:55:33 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 16:13:49 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/11 16:17:31 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,6 @@ void	Account::_displayTimestamp( void )
 	std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", localTime);
 	std::cout << buffer;
 }
-
-
 
 Account::~Account(void)
 {
