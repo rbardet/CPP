@@ -61,7 +61,8 @@
 		"semaphore": "cpp",
 		"__nullptr": "cpp",
 		"locale": "cpp",
-		"__locale": "cpp"
+		"__locale": "cpp",
+		"__functional_base": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }

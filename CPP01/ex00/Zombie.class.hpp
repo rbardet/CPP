@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:33:24 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 18:32:53 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/11 21:18:49 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
 	~Zombie(void);
 };
 
-void randomChump( std::string name );
-Zombie* newZombie( std::string name );
+void	randomChump( std::string name );
+Zombie*	newZombie( std::string name );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:33:24 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 21:13:23 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/11 21:18:53 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ public:
 	~Zombie(void);
 };
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie*	zombieHorde( int N, std::string name );
 
 #endif

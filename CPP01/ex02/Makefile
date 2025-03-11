@@ -6,14 +6,13 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/03/11 14:28:16 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/03/11 21:22:13 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = dreamjob
+NAME = ex02
 
-SOURCES =	Account.cpp \
-			tests.cpp \
+SOURCES =	main.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:%.cpp=$(OBJ_DIR)/%.o)
