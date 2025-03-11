@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 16:23:21 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 18:32:38 by rbardet-         ###   ########.fr       */
+/*   Created: 2025/03/11 16:40:16 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/03/11 21:13:40 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.class.hpp"
 
-int	main(void)
+Zombie::Zombie(void)
 {
-	Zombie	*zombie1;
+}
 
-	zombie1 = newZombie("Robin");
-	zombie1->announce();
-	randomChump("Shrek");
-	randomChump("Homer");
-	delete	zombie1;
-	return (0);
+void Zombie::announce(void)
+{
+	std::cout << name << ": " << " BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::set_name(std::string _name)
+{
+	name =_name;
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << name << " Destructed" << std::endl;
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 16:23:21 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 18:32:38 by rbardet-         ###   ########.fr       */
+/*   Created: 2025/03/11 18:38:30 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/03/11 21:16:08 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int	main(void)
 {
-	Zombie	*zombie1;
+	Zombie	*horde;
 
-	zombie1 = newZombie("Robin");
-	zombie1->announce();
-	randomChump("Shrek");
-	randomChump("Homer");
-	delete	zombie1;
+	horde = zombieHorde(50, "Shrek");
+	for (int i = 0; i < 50; i++)
+		horde[i].announce();
+	delete[]	horde;
 	return (0);
 }
