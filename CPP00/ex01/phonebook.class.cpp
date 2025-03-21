@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:25:53 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 00:14:53 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/21 17:16:17 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,12 @@ void	phonebook::search_contact(void)
 {
 	std::string	buffer;
 
-	std::cout << "Enter an index to get personal information : ";
-	if (!std::getline(std::cin, buffer))
-		return ;
+	do
+	{
+		std::cout << "Enter an index to get personal information : ";
+		if (!std::getline(std::cin, buffer))
+			return ;
+	} while(buffer.empty());
 	for (int i = 0; buffer[i]; i++)
 	{
 		if (!isdigit(buffer[i]) || buffer[i] == '0')

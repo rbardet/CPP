@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 00:55:33 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 16:17:31 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/21 15:29:44 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 		return (false);
 	}
 	_nbWithdrawals++;
+	_totalNbWithdrawals++;
 	_amount-=withdrawal;
 	_totalAmount-=withdrawal;
 	std::cout << "withdrawal:" << withdrawal << ";";
