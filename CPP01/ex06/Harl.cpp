@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 00:44:16 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/24 09:30:34 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:00:28 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,6 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	int complain_lv = get_complain_lv(level);
-	void(Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	bool is_complaining;
-	std::string state[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	if (complain_lv == -1)
-		return ;
-	for (int i = 0; i < 4; i++)
-	{
-		if (i == complain_lv)
-			is_complaining = true;
-		if (is_complaining == true)
-			(this->*ptr[i])();
-	}
-}
-
-int	Harl::get_complain_lv(std::string level)
-{
 	int	wich_case = -1;
 	int	complain_lv = 0;
 	std::string state[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
@@ -74,24 +56,19 @@ int	Harl::get_complain_lv(std::string level)
 	}
 	switch (wich_case)
 	{
-	case -1:
+	case 0:
+		debug();
+	case 1:
+		info();
+	case 2:
+		warning();
+	case 3:
+		error();
+		break ;
+	default:
 		complain_lv = -1;
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		break ;
-	case 0:
-		complain_lv = 0;
-		break ;
-	case 1:
-		complain_lv = 1;
-		break ;
-	case 2:
-		complain_lv = 2;
-		break ;
-	case 3:
-		complain_lv = 3;
-		break ;
 	}
-	return (complain_lv);
 }
 
 Harl::~Harl(void)

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 00:44:18 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/24 09:26:09 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 14:59:04 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ private:
 public:
 	Harl(void);
 	void complain(std::string level);
-	int get_complain_lv(std::string level);
 	~Harl(void);
 };
 
