@@ -6,11 +6,11 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 20:49:05 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/19 23:30:00 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:34:11 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed(/* args */)
 {

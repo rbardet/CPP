@@ -6,11 +6,11 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 20:46:08 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/19 22:56:25 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:34:04 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
+#include "Fixed.hpp"
 
 int main( void )
 {

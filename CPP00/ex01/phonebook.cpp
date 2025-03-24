@@ -6,12 +6,12 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 17:25:53 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/21 17:16:17 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:31:53 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "phonebook.class.hpp"
+#include "phonebook.hpp"
 
 phonebook::phonebook(void)
 {

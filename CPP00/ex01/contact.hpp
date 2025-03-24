@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/09 18:31:42 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/10 21:59:37 by rbardet-         ###   ########.fr       */
+/*   Created: 2025/03/09 18:53:26 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/03/24 09:32:20 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#ifndef CONTACT_H
+# define CONTACT_H
 
-#include "contact.class.hpp"
 #include <iostream>
 #include <iomanip>
-#include <string.h>
-#include <stdlib.h>
 
-class phonebook
+class contact
 {
 private:
-	contact	contacts[8];
-	int		index;
-	int		nb_contact;
+	std::string	firstname;
+	std::string	lastname;
+	std::string	nickname;
+	std::string	phonenumber;
+	std::string	darksecret;
 public:
-	phonebook(void);
-	void		add_contact(void);
-	void		show_contact(void);
-	void		search_contact(void);
-	~phonebook(void);
+	contact(void);
+	void	contact_data();
+	void	show_contact(int id);
+	void	add_contact();
+	~contact(void);
 };
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:50:41 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/21 17:24:00 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:31:46 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.class.hpp"
+#include "phonebook.hpp"
 
 int	main(void)
 {
