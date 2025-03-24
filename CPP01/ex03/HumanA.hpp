@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:53:03 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/24 09:15:38 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 14:01:30 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class HumanA
 {
 private:
 	std::string	name;
-	Weapon		*type;
+	Weapon		&type;
 public:
-	HumanA(std::string name, Weapon &type);
+	HumanA(std::string name, Weapon &new_weapon);
 	void attack(void);
 	~HumanA(void);
 };

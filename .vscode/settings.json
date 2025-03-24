@@ -67,7 +67,8 @@
 		"__hash_table": "cpp",
 		"__tuple": "cpp",
 		"fstream": "cpp",
-		"codecvt": "cpp"
+		"codecvt": "cpp",
+		"filesystem": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }

@@ -6,14 +6,14 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/03/24 09:34:23 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/03/24 10:58:52 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlFilter
+NAME = ex00
 
 SOURCES =	main.cpp \
-			Harl.cpp \
+			Fixed.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:%.cpp=$(OBJ_DIR)/%.o)

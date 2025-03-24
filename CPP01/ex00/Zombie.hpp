@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:33:24 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/24 09:08:48 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 13:41:54 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Zombie
 private:
 	std::string name;
 public:
-	Zombie(std::string _name);
+	Zombie(std::string name);
 	void announce(void);
 	~Zombie(void);
 };

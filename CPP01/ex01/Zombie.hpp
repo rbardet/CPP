@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:33:24 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/24 09:12:31 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 13:43:27 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
 	Zombie();
 	void announce(void);
-	void set_name(std::string _name);
+	void set_name(std::string name);
 	~Zombie(void);
 };
 
