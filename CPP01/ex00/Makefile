@@ -6,16 +6,16 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/03/11 17:16:39 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/03/24 09:10:35 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex00
 
 SOURCES =	main.cpp \
-			new_Zombie.cpp \
+			newZombie.cpp \
 			randomChump.cpp \
-			Zombie.class.cpp \
+			Zombie.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:%.cpp=$(OBJ_DIR)/%.o)

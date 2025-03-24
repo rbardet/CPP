@@ -6,11 +6,11 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:23:21 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/17 20:49:54 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:10:09 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#include "Zombie.hpp"
 
 int	main(void)
 {

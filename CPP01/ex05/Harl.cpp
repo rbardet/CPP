@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.class.cpp                                     :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 00:44:16 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/18 20:38:42 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:16:40 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.class.hpp"
+#include "Harl.hpp"
 
 Harl::Harl(void)
 {
@@ -45,38 +45,12 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	int	wich_case = -1;
-
 	void(Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string state[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for (int i = 0; i < 4; i++)
 	{
 		if (state[i] == level)
-			wich_case = i;
-	}
-	switch (wich_case)
-	{
-	case 0:
-		(this->*ptr[0])();
-		(this->*ptr[1])();
-		(this->*ptr[2])();
-		(this->*ptr[3])();
-		break ;
-	case 1:
-		(this->*ptr[1])();
-		(this->*ptr[2])();
-		(this->*ptr[3])();
-		break ;
-	case 2:
-		(this->*ptr[2])();
-		(this->*ptr[3])();
-		break ;
-	case 3:
-		(this->*ptr[3])();
-		break ;
-	default:
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		break ;
+			(this->*ptr[i])();
 	}
 }
 

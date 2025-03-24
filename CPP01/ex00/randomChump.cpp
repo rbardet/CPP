@@ -6,11 +6,11 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 16:50:22 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/11 18:24:59 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:09:09 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#include "Zombie.hpp"
 
 void	randomChump( std::string name )
 {

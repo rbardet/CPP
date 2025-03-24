@@ -6,13 +6,13 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 21:45:43 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/17 22:23:39 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:14:32 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.class.hpp"
-#include "HumanB.class.hpp"
-#include "Weapon.class.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
 int main()
 {

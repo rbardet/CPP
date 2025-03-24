@@ -6,11 +6,11 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 18:38:02 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/18 20:38:40 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/03/24 09:17:10 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.class.hpp"
+#include "Harl.hpp"
 
 int	main(int argc, char **argv)
 {

@@ -6,15 +6,15 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/03/11 21:52:56 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/03/24 09:15:08 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex03
 
-SOURCES =	HumanA.class.cpp \
-			HumanB.class.cpp \
-			Weapon.class.cpp \
+SOURCES =	HumanA.cpp \
+			HumanB.cpp \
+			Weapon.cpp \
 			main.cpp \
 
 OBJ_DIR = obj

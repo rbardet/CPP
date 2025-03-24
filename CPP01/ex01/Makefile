@@ -6,14 +6,14 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/03/11 18:42:31 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/03/24 09:12:35 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex01
 
 SOURCES =	main.cpp \
-			Zombie.class.cpp \
+			Zombie.cpp \
 			zombieHorde.cpp \
 
 OBJ_DIR = obj
