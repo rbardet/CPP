@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 00:44:16 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/24 15:00:28 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/02 02:07:25 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	int	wich_case = -1;
-	int	complain_lv = 0;
 	std::string state[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
@@ -66,7 +65,6 @@ void	Harl::complain(std::string level)
 		error();
 		break ;
 	default:
-		complain_lv = -1;
 		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }

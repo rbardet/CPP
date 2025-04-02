@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 20:49:05 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/26 16:31:01 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/02 02:04:32 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	Fixed::toInt(void) const
 	return (this->raw / (1 << this->nb_bits));
 }
 
+//comparison operator
 int		Fixed::operator>(Fixed const &src)
 {
 	return(this->raw >= src.raw);
@@ -81,6 +82,7 @@ int		Fixed::operator!=(Fixed const &src)
 	return(this->raw != src.raw);
 }
 
+// arithmetic operators
 void	Fixed::operator=(Fixed const &src)
 {
 	// std::cout << "Copy assignment operator called" << std::endl;
@@ -104,8 +106,32 @@ void	Fixed::operator*(Fixed const &src)
 
 void	Fixed::operator/(Fixed const &src)
 {
+	if (this->raw == 0 || src.raw == 0)
+		return ;
 	this->raw - src.getRawBits();
 }
+
+//increment operator
+void	Fixed::operator++(void)
+{
+	this->raw++;
+}
+
+void	Fixed::operator++(int)
+{
+	this->raw++;
+}
+
+void	Fixed::operator--(void)
+{
+	this->raw--;
+}
+
+void	Fixed::operator--(int)
+{
+	this->raw--;
+}
+
 
 int	Fixed::getRawBits(void) const
 {
