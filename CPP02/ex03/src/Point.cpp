@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 07:36:45 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/02 10:17:08 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/02 10:48:08 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,16 @@ Point::Point(const float x, const float y): x(x), y(y)
 Point::Point(const Point &src): x(src.x), y(src.y)
 {
 
+}
+
+Fixed	Point::get_y(void) const
+{
+	return(this->y);
+}
+
+Fixed	Point::get_x(void) const
+{
+	return(this->x);
 }
 
 Point	Point::operator=(const Point &src)
