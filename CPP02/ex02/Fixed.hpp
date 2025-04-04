@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 20:48:17 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/26 20:08:23 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/02 12:05:26 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,36 @@ public:
 	Fixed(const float raw);
 	Fixed(const Fixed &src);
 	Fixed(const Fixed nb1, const Fixed nb2);
-	int getRawBits(void) const;
-	void setRawBits(int const raw );
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw );
+	void	operator=(Fixed const &src);
 
 	//comparison operator
-	int operator>(Fixed const &src);
-	int operator<(Fixed const &src);
-	int operator>=(Fixed const &src);
-	int operator<=(Fixed const &src);
-	int operator==(Fixed const &src);
-	int operator!=(Fixed const &src);
+	int	operator>(Fixed const &src);
+	int	operator<(Fixed const &src);
+	int	operator>=(Fixed const &src);
+	int	operator<=(Fixed const &src);
+	int	operator==(Fixed const &src);
+	int	operator!=(Fixed const &src);
 
 	// arithmetic operators
-	void operator=(Fixed const &src);
-	void operator+(Fixed const &src);
-	void operator-(Fixed const &src);
-	void operator*(Fixed const &src);
-	void operator/(Fixed const &src);
+	float operator+(Fixed const &src);
+	float operator-(Fixed const &src);
+	float operator*(Fixed const &src);
+	float operator/(Fixed const &src);
 
 	//increment operator
-	void	operator++(void);
-	void	operator++(int);
-	void	operator--(void);
-	void	operator--(int);
+	Fixed	&operator++(void);
+	Fixed	operator++(int);
+	Fixed	&operator--(void);
+	Fixed	operator--(int);
 
-	int toInt(void) const;
-	float toFloat(void) const;
+	static float	min(Fixed &a, Fixed &b);
+	static float	min(const Fixed &a, const Fixed &b);
+	static float	max(const Fixed &a, const Fixed &b);
+	static float	max(Fixed &a, Fixed &b);
+	int				toInt(void) const;
+	float			toFloat(void) const;
 	~Fixed(void);
 };
 
