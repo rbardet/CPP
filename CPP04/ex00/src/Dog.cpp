@@ -6,15 +6,17 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:14:57 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/04 08:21:00 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/05 08:06:05 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog()
 {
 	std::cout << "Default Constructor called for Dog" << std::endl;
+	this->setType("Dog");
+	this->setSound("Ouaf Ouaf");
 }
 
 Dog::Dog(Dog const &src)
