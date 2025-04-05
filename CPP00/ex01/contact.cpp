@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 18:53:26 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/03/24 09:32:19 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/03 08:03:00 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	contact::show_contact(int id)
 	std::cout << "│" << std::setw(10) << id + 1;
 	std::cout << "│" << std::setw(10) << trunc_data(firstname);
 	std::cout << "│" << std::setw(10) << trunc_data(lastname);
-	std::cout << "│" << std::setw(10) <<  trunc_data(nickname);
+	std::cout << "│" << std::setw(10) << trunc_data(nickname);
 	std::cout << "│" << std::endl;
 }
 
