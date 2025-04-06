@@ -35,7 +35,7 @@ Animal::~Animal()
 	std::cout << "Destructor called for Animal" << std::endl;
 }
 
-std::string	Animal::getType() const
+const std::string	&Animal::getType() const
 {
 	return (this->type);
 }
@@ -47,5 +47,5 @@ void	Animal::setType(std::string const type)
 
 void	Animal::makeSound() const
 {
-	std::cout << getSound() << std::endl;
+	std::cout << "Animal doesn't have a specific sound" << std::endl;
 }

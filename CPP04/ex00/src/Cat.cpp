@@ -18,7 +18,7 @@ Cat::Cat()
 	this->setType("Cat");
 }
 
-Cat::Cat(Cat const &src)
+Cat::Cat(Cat const &src): Animal()
 {
 	std::cout << "Copy Constructor called for Cat" << std::endl;
 	*this = src;
@@ -33,4 +33,9 @@ Cat	Cat::operator=(Cat const &src)
 Cat::~Cat()
 {
 	std::cout << "Destructor called for Cat" << std::endl;
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "Miaouuu" << std::endl;
 }

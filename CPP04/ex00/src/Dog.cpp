@@ -16,10 +16,9 @@ Dog::Dog()
 {
 	std::cout << "Default Constructor called for Dog" << std::endl;
 	this->setType("Dog");
-	this->setSound("Ouaf Ouaf");
 }
 
-Dog::Dog(Dog const &src)
+Dog::Dog(Dog const &src) : Animal()
 {
 	std::cout << "Copy Constructor called for Dog" << std::endl;
 	*this = src;
@@ -34,4 +33,9 @@ Dog	Dog::operator=(Dog const &src)
 Dog::~Dog()
 {
 	std::cout << "Destructor called for Dog" << std::endl;
+}
+
+void	Dog::makeSound() const
+{
+	std::cout << "Wouf wouf" << std::endl;
 }

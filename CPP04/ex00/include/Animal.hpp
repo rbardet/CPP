@@ -22,11 +22,11 @@ public:
 	Animal();
 	Animal(Animal const &src);
 	Animal	operator=(Animal const &src);
-	~Animal();
+	virtual ~Animal();
 
-	void		makeSound() const;
-	std::string	getType() const;
-	void		setType(std::string const type);
+	virtual void		makeSound() const;
+	const std::string	&getType() const;
+	void				setType(std::string const type);
 };
 
 

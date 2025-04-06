@@ -21,4 +21,6 @@ public:
 	WrongCat(WrongCat const &src);
 	WrongCat	operator=(WrongCat const &src);
 	~WrongCat();
+
+	void	makeSound() const;
 };

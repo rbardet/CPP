@@ -19,7 +19,7 @@ WrongCat::WrongCat()
 	this->setType("WrongCat");
 }
 
-WrongCat::WrongCat(WrongCat const &src)
+WrongCat::WrongCat(WrongCat const &src): WrongAnimal()
 {
 	std::cout << "Copy Constructor called for WrongCat" << std::endl;
 	*this = src;
@@ -34,4 +34,9 @@ WrongCat	WrongCat::operator=(WrongCat const &src)
 WrongCat::~WrongCat()
 {
 	std::cout << "Destructor called for WrongCat" << std::endl;
+}
+
+void	WrongCat::makeSound() const
+{
+	std::cout << "Miaouuu" << std::endl;
 }

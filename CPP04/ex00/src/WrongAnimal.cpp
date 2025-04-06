@@ -35,7 +35,7 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "Destructor called for WrongAnimal" << std::endl;
 }
 
-std::string	WrongAnimal::getType() const
+const std::string	&WrongAnimal::getType() const
 {
 	return (this->type);
 }
@@ -47,5 +47,5 @@ void	WrongAnimal::setType(std::string const type)
 
 void	WrongAnimal::makeSound() const
 {
-	std::cout << getSound() << std::endl;
+	std::cout << "WrongAnimal doesn't have a specific sound" << std::endl;
 }

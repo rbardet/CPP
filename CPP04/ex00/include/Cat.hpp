@@ -21,4 +21,6 @@ public:
 	Cat(Cat const &src);
 	Cat	operator=(Cat const &src);
 	~Cat();
+
+	void		makeSound() const;
 };

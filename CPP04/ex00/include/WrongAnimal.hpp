@@ -22,11 +22,11 @@ public:
 	WrongAnimal();
 	WrongAnimal(WrongAnimal const &src);
 	WrongAnimal	operator=(WrongAnimal const &src);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
-	void		makeSound() const;
-	std::string	getType() const;
-	void		setType(std::string const type);
+	void				makeSound() const;
+	const std::string	&getType() const;
+	void				setType(std::string const type);
 };
 
 
