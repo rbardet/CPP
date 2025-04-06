@@ -6,22 +6,25 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/04/03 04:45:17 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/04/05 08:24:06 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex00
 
 SOURCES =	src/main.cpp \
-			src/ClapTrap.cpp \
-
-INCLUDE = -I include
+			src/Animal.cpp \
+			src/Dog.cpp \
+			src/Cat.cpp \
+			src/WrongCat.cpp \
+			src/WrongAnimal.cpp \
+			src/Brain.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g $(INCLUDE)
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
