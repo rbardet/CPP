@@ -16,7 +16,7 @@
 
 class Animal
 {
-protected:
+private:
 	std::string	type;
 public:
 	Animal();
