@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:46:22 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/04 07:59:46 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/07 08:49:59 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,13 @@
 
 ScavTrap::ScavTrap()
 {
-	std::cout << "ScavTrap default constructor called" << std::endl;
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
+	std::cout << "Default constructor called for ScavTrap" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const name): ClapTrap(name)
-{
-	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
-	std::cout << "ScavTrap name constructor called" << std::endl;
-}
-
-ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src.name)
+ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src)
 {
 	std::cout << "Copy constructor called for ScavTrap" << std::endl;
 	*this = src;
@@ -36,13 +28,21 @@ ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src.name)
 
 ScavTrap	ScavTrap::operator=(const ScavTrap &src)
 {
-	std::cout << "Copy assignement called for ScavTrap" << std::endl;
+	std::cout << "Copy assignement called" << std::endl;
 	return (src);
 }
 
 ScavTrap::~ScavTrap()
 {
 	std::cout << "Destructor called for ScavTrap : " << this->name << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string const name): ClapTrap(name)
+{
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
+	std::cout << "Name Constructor called for ScavTrap" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target)
@@ -63,27 +63,7 @@ void	ScavTrap::attack(const std::string& target)
 	std::cout << "New amount of energy points : " << this->energy_points << std::endl;
 }
 
-void	ScavTrap::guardGate()
+void	ScavTrap::guardGate() const
 {
 	std::cout << this->name << " is now in keeper mode" << std::endl;
-}
-
-std::string	ScavTrap::get_name() const
-{
-	return(this->name);
-}
-
-int	ScavTrap::get_hit_points() const
-{
-	return(this->hit_points);
-}
-
-unsigned int	ScavTrap::get_energy_points() const
-{
-	return(this->energy_points);
-}
-
-unsigned int	ScavTrap::get_attack_damage() const
-{
-	return(this->attack_damage);
 }

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:45:59 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/04 07:47:13 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/07 08:50:03 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,13 @@ private:
 
 public:
 	ScavTrap();
-	ScavTrap(std::string const name);
 	ScavTrap(const ScavTrap &src);
 	ScavTrap	operator=(const ScavTrap &src);
 	~ScavTrap();
 
-	void	guardGate();
-	void	attack(const std::string& target);
-	std::string		get_name() const;
-	int				get_hit_points() const;
-	unsigned int	get_energy_points() const;
-	unsigned int	get_attack_damage() const;
+	ScavTrap(std::string const name);
+	void			guardGate() const;
+	void			attack(const std::string& target);
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:18:19 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/04 07:48:26 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/07 09:02:48 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(void)
 {
 	DiamondTrap	diamond("Shrek");
 
-	std::cout << "-------------- frag -----------------" << std::endl;
+	std::cout << "-------------- Diamond -----------------" << std::endl;
 	std::cout << "Name : " << diamond.get_name() << std::endl;
 	std::cout << "Hit points : " << diamond.get_hit_points() << std::endl;
 	std::cout << "Energy points : " << diamond.get_energy_points() << std::endl;
