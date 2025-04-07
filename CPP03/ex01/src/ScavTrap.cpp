@@ -6,18 +6,15 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:46:22 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/03 06:48:45 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/07 06:26:39 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string const name): ClapTrap(name)
+ScavTrap::ScavTrap()
 {
-	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
-	std::cout << "Constructor called for ScavTrap" << std::endl;
+	std::cout << "Default constructor called for ScavTrap" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src.name)
@@ -35,6 +32,14 @@ ScavTrap	ScavTrap::operator=(const ScavTrap &src)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "Destructor called for ScavTrap : " << this->name << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string const name): ClapTrap(name)
+{
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
+	std::cout << "Name Constructor called for ScavTrap" << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target)
