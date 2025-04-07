@@ -6,19 +6,15 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:20:41 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/03 05:46:51 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/07 06:25:37 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap : Default constructor called" << std::endl;
-	this->name = name;
-	this->hit_points = 10;
-	this->energy_points = 10;
-	this->attack_damage = 0;
+	std::cout << "Default constructor called for ClapTrap" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
@@ -36,6 +32,15 @@ ClapTrap	ClapTrap::operator=(const ClapTrap &src)
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap Destructor called for " << this->name << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name)
+{
+	std::cout << "ClapTrap : Name constructor called" << std::endl;
+	this->name = name;
+	this->hit_points = 10;
+	this->energy_points = 10;
+	this->attack_damage = 0;
 }
 
 void	ClapTrap::attack(const std::string& target)
