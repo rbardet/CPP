@@ -17,13 +17,22 @@
 class ScavTrap : public virtual ClapTrap
 {
 private:
-
+	int				_hit_points;
+	unsigned int	_energy_points;
+	unsigned int	_attack_damage;
 public:
 	ScavTrap();
 	ScavTrap(const ScavTrap &src);
 	ScavTrap	operator=(const ScavTrap &src);
 	~ScavTrap();
 
+	std::string		get_name() const;
+	int				get_hit_points() const;
+	unsigned int	get_energy_points() const;
+	unsigned int	get_attack_damage() const;
+	int				_get_hit_points() const;
+	unsigned int	_get_energy_points() const;
+	unsigned int	_get_attack_damage() const;
 	ScavTrap(std::string const name);
 	void			guardGate() const;
 	void			attack(const std::string& target);

@@ -18,14 +18,11 @@ SOURCES =	src/main.cpp \
 			src/FragTrap.cpp \
 			src/DiamondTrap.cpp \
 
-
-INCLUDE = -I include
-
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g $(INCLUDE)
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 

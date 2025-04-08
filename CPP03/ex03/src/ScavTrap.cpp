@@ -12,11 +12,11 @@
 
 #include "../include/ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : _hit_points(100) , _energy_points(50) , _attack_damage(20)
 {
-	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
+	this->hit_points = this->_hit_points;
+	this->energy_points = this->_energy_points;
+	this->attack_damage = this->_attack_damage;
 	std::cout << "Default constructor called for ScavTrap" << std::endl;
 }
 
@@ -37,11 +37,11 @@ ScavTrap::~ScavTrap()
 	std::cout << "Destructor called for ScavTrap : " << this->name << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const name): ClapTrap(name)
+ScavTrap::ScavTrap(std::string const name): ClapTrap(name), _hit_points(100) , _energy_points(50) , _attack_damage(20)
 {
-	this->hit_points = 100;
-	this->energy_points = 50;
-	this->attack_damage = 20;
+	this->hit_points = this->_hit_points;
+	this->energy_points = this->_energy_points;
+	this->attack_damage = this->_attack_damage;
 	std::cout << "Name Constructor called for ScavTrap" << std::endl;
 }
 
@@ -66,4 +66,39 @@ void	ScavTrap::attack(const std::string& target)
 void	ScavTrap::guardGate() const
 {
 	std::cout << this->name << " is now in keeper mode" << std::endl;
+}
+
+std::string	ScavTrap::get_name() const
+{
+	return(this->name);
+}
+
+int	ScavTrap::get_hit_points() const
+{
+	return(this->hit_points);
+}
+
+unsigned int	ScavTrap::get_energy_points() const
+{
+	return(this->energy_points);
+}
+
+unsigned int	ScavTrap::get_attack_damage() const
+{
+	return(this->attack_damage);
+}
+
+int	ScavTrap::_get_hit_points() const
+{
+	return(this->_hit_points);
+}
+
+unsigned int	ScavTrap::_get_energy_points() const
+{
+	return(this->_energy_points);
+}
+
+unsigned int	ScavTrap::_get_attack_damage() const
+{
+	return(this->_attack_damage);
 }

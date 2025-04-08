@@ -12,15 +12,15 @@
 
 #include "../include/DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : FragTrap() , ScavTrap()
+DiamondTrap::DiamondTrap()
 {
 	std::cout << "Default constructor called for DiamondTrap" << std::endl;
-	this->hit_points = FragTrap::hit_points;
-	this->energy_points = ScavTrap::energy_points;
-	this->attack_damage = FragTrap::attack_damage;
+	this->hit_points = FragTrap::_get_hit_points();
+	this->energy_points = ScavTrap::_get_energy_points();
+	this->attack_damage = FragTrap::_get_attack_damage();
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src)
+DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src), FragTrap(), ScavTrap()
 {
 	std::cout << "DiamondTrap : Copy constructor called" << std::endl;
 	*this = src;
@@ -37,13 +37,13 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap Destructor called for : " << this->name << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string const name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(std::string const name) : ClapTrap(name + "_clap_name")
 {
 	std::cout << "Name Constructor called for DiamondTrap" << std::endl;
 	this->name = name;
-	this->hit_points = FragTrap::hit_points;
-	this->energy_points = ScavTrap::energy_points;
-	this->attack_damage = FragTrap::attack_damage;
+	this->hit_points = FragTrap::_get_hit_points();
+	this->energy_points = ScavTrap::_get_energy_points();
+	this->attack_damage = FragTrap::_get_attack_damage();
 }
 
 void	DiamondTrap::whoAmI() const
