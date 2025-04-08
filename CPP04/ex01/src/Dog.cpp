@@ -16,6 +16,7 @@ Dog::Dog()
 {
 	std::cout << "Default Constructor called for Dog" << std::endl;
 	this->setType("Dog");
+	this->ideas = new Brain();
 }
 
 Dog::Dog(Dog const &src) : Animal()
@@ -33,6 +34,7 @@ Dog	Dog::operator=(Dog const &src)
 Dog::~Dog()
 {
 	std::cout << "Destructor called for Dog" << std::endl;
+	delete	ideas;
 }
 
 void	Dog::makeSound() const

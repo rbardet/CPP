@@ -16,6 +16,7 @@ Cat::Cat()
 {
 	std::cout << "Default Constructor called for Cat" << std::endl;
 	this->setType("Cat");
+	this->ideas = new Brain;
 }
 
 Cat::Cat(Cat const &src): Animal()
@@ -33,6 +34,7 @@ Cat	Cat::operator=(Cat const &src)
 Cat::~Cat()
 {
 	std::cout << "Destructor called for Cat" << std::endl;
+	delete	ideas;
 }
 
 void	Cat::makeSound() const

@@ -21,3 +21,15 @@ Brain::~Brain()
 {
 	std::cout << "Destructor called for Brain" << std::endl;
 }
+
+void	Brain::get_ideas()
+{
+	for (size_t i = 0; i < 100; i++)
+		this->ideas[i] = "Playing outside";	
+}
+
+void	Brain::display_ideas() const
+{
+	for (size_t i = 0; i < 100; i++)
+		std::cout << this->ideas[i] << std::endl;
+}
