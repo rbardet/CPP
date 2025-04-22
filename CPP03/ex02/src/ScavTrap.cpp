@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:46:22 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/07 06:32:30 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:47:44 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 ScavTrap::ScavTrap()
 {
+	this->hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 	std::cout << "Default constructor called for ScavTrap" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src.name)
+ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src)
 {
 	std::cout << "Copy constructor called for ScavTrap" << std::endl;
 	*this = src;
@@ -62,5 +65,5 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << this->name << " is now in keeper mode" << std::endl;
+	std::cout << this->name << " is now in guard mode" << std::endl;
 }

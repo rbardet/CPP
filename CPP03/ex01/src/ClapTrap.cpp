@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:20:41 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/07 06:25:37 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/07 06:52:45 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "Default constructor called for ClapTrap" << std::endl;
+	this->hit_points = 10;
+	this->energy_points = 10;
+	this->attack_damage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)

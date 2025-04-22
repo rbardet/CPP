@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:18:19 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/07 09:02:48 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/22 16:52:49 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(void)
 	std::cout << "-------------------------------------" << std::endl;
 
 	diamond.attack("Macron");
+	diamond.beRepaired(20);
+	diamond.takeDamage(40);
 	diamond.whoAmI();
 	return (0);
 }
