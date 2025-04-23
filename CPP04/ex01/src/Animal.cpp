@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:04:36 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 09:11:25 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/22 19:29:42 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ Animal::Animal()
 	this->setType("Animal");
 }
 
-Animal::Animal(Animal const &src)
+Animal::Animal(Animal const &src) : type(src.type)
 {
 	std::cout << "Copy Constructor called for Animal" << std::endl;
-	*this = src;
 }
 
-Animal	Animal::operator=(Animal const &src)
+void	Animal::operator=(Animal const &src)
 {
 	std::cout << "Operator assignement called for Animal" << std::endl;
-	return (src);
+	this->type = src.getType();
 }
 
 Animal::~Animal()

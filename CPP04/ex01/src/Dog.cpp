@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:14:57 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 08:06:05 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:38:07 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ Dog::Dog()
 	this->ideas = new Brain();
 }
 
-Dog::Dog(Dog const &src) : Animal()
+Dog::Dog(Dog const &src)
 {
 	std::cout << "Copy Constructor called for Dog" << std::endl;
-	*this = src;
+	this->setType("Dog");
+	this->ideas = new Brain (*src.ideas);
 }
 
-Dog	Dog::operator=(Dog const &src)
+void	Dog::operator=(Dog const &src)
 {
 	std::cout << "Operator assignement called for Dog" << std::endl;
-	return (src);
+	delete this->ideas;
+	this->ideas = new Brain (*src.ideas);
 }
 
 Dog::~Dog()
@@ -40,4 +42,15 @@ Dog::~Dog()
 void	Dog::makeSound() const
 {
 	std::cout << "Wouf wouf" << std::endl;
+}
+
+void	Dog::fill_ideas(std::string ideas)
+{
+	this->ideas->fill_ideas(ideas);
+}
+
+void	Dog::get_ideas() const
+{
+	for (size_t i = 0; i < 100; i++)
+		std::cout << this->ideas->get_ideas(i) << std::endl;
 }

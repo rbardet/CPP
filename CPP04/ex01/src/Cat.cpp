@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:19:04 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 09:11:28 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 17:45:26 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ Cat::Cat()
 	this->ideas = new Brain;
 }
 
-Cat::Cat(Cat const &src): Animal()
+Cat::Cat(Cat const &src)
 {
 	std::cout << "Copy Constructor called for Cat" << std::endl;
-	*this = src;
+	this->setType("Cat");
+	this->ideas = new Brain (*src.ideas);
 }
 
-Cat	Cat::operator=(Cat const &src)
+void	Cat::operator=(Cat const &src)
 {
 	std::cout << "Operator assignement called for Cat" << std::endl;
-	return (src);
+	delete this->ideas;
+	this->ideas = new Brain (*src.ideas);
 }
 
 Cat::~Cat()
@@ -40,4 +42,15 @@ Cat::~Cat()
 void	Cat::makeSound() const
 {
 	std::cout << "Miaouuu" << std::endl;
+}
+
+void	Cat::fill_ideas(std::string ideas)
+{
+	this->ideas->fill_ideas(ideas);
+}
+
+void	Cat::get_ideas() const
+{
+	for (size_t i = 0; i < 100; i++)
+		std::cout << this->ideas->get_ideas(i) << std::endl;
 }

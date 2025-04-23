@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:04:15 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 09:11:59 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/22 19:20:41 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 public:
 	Animal();
 	Animal(Animal const &src);
-	Animal	operator=(Animal const &src);
+	void	operator=(Animal const &src);
 	virtual ~Animal();
 
 	virtual void		makeSound() const;

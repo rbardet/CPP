@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 19:09:38 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/04/23 17:05:08 by rbardet-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/Brain.hpp"
 
 Brain::Brain()
@@ -8,13 +20,15 @@ Brain::Brain()
 Brain::Brain(Brain const &src)
 {
 	std::cout << "Copy Constructor called for Brain" << std::endl;
-	*this = src;
+	for (size_t i = 0; i < 100; i++)
+		this->ideas[i] = src.ideas[i];
 }
 
-Brain	Brain::operator=(Brain const &src)
+void	Brain::operator=(Brain const &src)
 {
 	std::cout << "Operator assignement called for Brain" << std::endl;
-	return (src);
+	for (size_t i = 0; i < 100; i++)
+		this->ideas[i] = src.ideas[i];
 }
 
 Brain::~Brain()
@@ -22,14 +36,13 @@ Brain::~Brain()
 	std::cout << "Destructor called for Brain" << std::endl;
 }
 
-void	Brain::get_ideas()
+void	Brain::fill_ideas(std::string ideas)
 {
 	for (size_t i = 0; i < 100; i++)
-		this->ideas[i] = "Playing outside";	
+		this->ideas[i] = ideas;
 }
 
-void	Brain::display_ideas() const
+const std::string	&Brain::get_ideas(size_t i) const
 {
-	for (size_t i = 0; i < 100; i++)
-		std::cout << this->ideas[i] << std::endl;
+	return(this->ideas[i]);
 }

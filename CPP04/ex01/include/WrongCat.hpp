@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 08:21:28 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 08:21:39 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:00:49 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ public:
 	WrongCat	operator=(WrongCat const &src);
 	~WrongCat();
 
-	void	makeSound() const;
+	void		makeSound() const;
 };

@@ -6,38 +6,13 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:03:43 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 08:30:05 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:01:06 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Cat.hpp"
 #include "../include/Dog.hpp"
 #include "../include/WrongCat.hpp"
-
-// int main()
-// {
-// 	const Animal* j = new Dog();
-// 	const Animal* i = new Cat();
-
-// 	delete j;
-// 	delete i;
-// 	return 0;
-// }
-
-int main()
-{
-	Animal* j = new Dog();
-	Animal* i = new Cat();
-
-	Animal* k(i);
-	
-	std::cout << k->getType() << std::endl;
-	i->setType("Other type of cat");
-	std::cout << k->getType() << std::endl;
-	delete j;
-	delete i;
-	return 0;
-}
 
 // int	main()
 // {
@@ -53,3 +28,26 @@ int main()
 // 		delete	animal[i];
 // 	return (0);
 // }
+
+int	main()
+{
+	Dog	*dog1 = new Dog();
+	Cat	*cat1 = new Cat();
+
+	cat1->fill_ideas("Running");
+	dog1->fill_ideas("Playing");
+
+	Cat	*cat2 = new Cat(*cat1);
+	Dog	*dog2 = new Dog(*dog1);
+	dog2->get_ideas();
+	cat2->get_ideas();
+	dog1->fill_ideas("SE VOMI DESSUS");
+	cat1->fill_ideas("Sleeping");
+	dog2->get_ideas();
+	cat2->get_ideas();
+	delete dog1;
+	delete dog2;
+	delete cat1;
+	delete cat2;
+	return (0);
+}
