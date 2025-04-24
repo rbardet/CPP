@@ -12,14 +12,12 @@
 
 #pragma once
 
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 #include <iostream>
 
 class Ice : public AMateria
 {
-private:
-
 public:
 	Ice();
 	Ice(Ice const &src);
@@ -27,7 +25,6 @@ public:
 	~Ice();
 
 	AMateria	*clone() const;
-	void		use(ICharacter &);
 };
 
 

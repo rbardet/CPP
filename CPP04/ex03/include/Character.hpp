@@ -13,9 +13,13 @@
 #pragma once
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {
+protected:
+	std::string	name;
+	AMateria	*inv[4];
 public:
 	Character();
 	Character(Character const &src);

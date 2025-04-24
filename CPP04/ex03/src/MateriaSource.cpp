@@ -22,7 +22,7 @@ MateriaSource::MateriaSource(MateriaSource const &src)
 	std::cout << "Copy Constructor called for MateriaSource" << std::endl;
 	for (size_t i = 0; i < 4; i++)
 		if (src.source[i])
-			this->source[i];
+			this->source[i]= src.source[i];
 }
 
 void	MateriaSource::operator=(MateriaSource const &src)
@@ -30,7 +30,10 @@ void	MateriaSource::operator=(MateriaSource const &src)
 	std::cout << "Operator assignement called for MateriaSource" << std::endl;
 	for (size_t i = 0; i < 4; i++)
 		if (src.source[i])
-			this->source[i];
+			delete this->source[i];
+	for (size_t i = 0; i < 4; i++)
+		if (src.source[i])
+			this->source[i]= src.source[i];
 }
 
 MateriaSource::~MateriaSource()
@@ -49,11 +52,21 @@ void	MateriaSource::learnMateria(AMateria *src)
 	for (size_t i = 0; i < 4; i++)
 	{
 		if (!this->source[i])
+		{
 			this->source[i] = src;
+			std::cout << "Materia " << src->getType()
+			<<" learned at " << i << " of MateriaSource inventory" << std::endl;
+		}
 	}
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &src)
 {
-	
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->source[i]->getType() == src)
+			return (this->source[i]);
+	}
+	std::cout << "This MateriaSource have not learned " << src << " yet" << std::endl;
+	return (NULL);
 }

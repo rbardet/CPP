@@ -17,14 +17,8 @@
 
 class IMateriaSource
 {
-protected:
-	AMateria	*source[4];
 public:
-	IMateriaSource();
-	IMateriaSource(IMateriaSource const &src);
-	void	operator=(IMateriaSource const &src);
-	virtual ~IMateriaSource();
-
+	virtual ~IMateriaSource() {};
 	virtual void learnMateria(AMateria*) = 0;
 	virtual AMateria* createMateria(std::string const & type) = 0;
 };

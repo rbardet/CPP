@@ -23,7 +23,7 @@ public:
 	AMateria();
 	AMateria(AMateria const &src);
 	void	operator=(AMateria const &src);
-	~AMateria();
+	virtual ~AMateria();
 
 	AMateria(std::string const & type);
 	std::string const & getType() const; //Returns the materia type

@@ -12,22 +12,20 @@
 
 #include "../include/Cure.hpp"
 
-Cure::Cure()
+Cure::Cure() : AMateria("cure")
 {
 	std::cout << "Default Constructor called for Cure" << std::endl;
-	this->type = "cure";
 }
 
-Cure::Cure(Cure const &src)
+Cure::Cure(Cure const &src) : AMateria(src.getType())
 {
 	std::cout << "Copy Constructor called for Cure" << std::endl;
-	*this = src;
 }
 
 void	Cure::operator=(Cure const &src)
 {
 	std::cout << "Operator assignement called for Cure" << std::endl;
-	*this = src;
+	this->type = src.getType();
 }
 
 Cure::~Cure()
@@ -38,9 +36,4 @@ Cure::~Cure()
 AMateria	*Cure::clone() const
 {
 	return(new Cure(*this));
-}
-
-void	Cure::use(ICharacter &target)
-{
-	std::cout << "* heals " << target.getName() << "'s wounds *"<< std::endl;
 }

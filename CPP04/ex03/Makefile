@@ -10,10 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex03
 
-SOURCES =	src/main.cpp \
-			src/ClapTrap.cpp \
+SOURCES =	src/AMateria.cpp \
+			src/Character.cpp \
+			src/Cure.cpp \
+			src/Ice.cpp \
+			src/main.cpp \
+			src/MateriaSource.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)

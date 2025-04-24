@@ -12,22 +12,20 @@
 
 #include "../include/Ice.hpp"
 
-Ice::Ice()
+Ice::Ice() : AMateria("ice")
 {
 	std::cout << "Default Constructor called for Ice" << std::endl;
-	this->type = "ice";
 }
 
-Ice::Ice(Ice const &src)
+Ice::Ice(Ice const &src) : AMateria(src.getType())
 {
 	std::cout << "Copy Constructor called for Ice" << std::endl;
-	*this = src;
 }
 
 void	Ice::operator=(Ice const &src)
 {
 	std::cout << "Operator assignement called for Ice" << std::endl;
-	*this = src;
+	this->type = src.getType();
 }
 
 Ice::~Ice()
@@ -40,7 +38,3 @@ AMateria	*Ice::clone() const
 	return(new Ice(*this));
 }
 
-void	Ice::use(ICharacter &target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
-}
