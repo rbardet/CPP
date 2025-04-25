@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 19:49:35 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/25 23:39:15 by rbardet-         ###   ########.fr       */
+/*   Created: 2025/04/25 22:55:09 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/04/26 00:52:35 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "../include/Bureaucrat.hpp"
 
-#include <iostream>
-
-class AMateria;
-
-class ICharacter
+int	main(void)
 {
-public:
-	virtual ~ICharacter() {};
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
-};
-
+	Bureaucrat	b1("Monsieur A", 151);
+	std::cout << b1 << std::endl;
+}
