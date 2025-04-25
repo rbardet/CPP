@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:45:47 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/23 23:19:39 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:15:47 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ AMateria::~AMateria()
 
 AMateria::AMateria(std::string const & type)
 {
-	std::cout << "Type Constructor called for AMateria" << std::endl;
 	this->type = type;
 }
 
