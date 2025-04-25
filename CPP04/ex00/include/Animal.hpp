@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:04:15 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 09:11:59 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:21:23 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class Animal
 {
-private:
+protected:
 	std::string	type;
 public:
 	Animal();

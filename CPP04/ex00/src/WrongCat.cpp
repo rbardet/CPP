@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 08:22:13 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 09:11:34 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:22:01 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 WrongCat::WrongCat()
 {
 	std::cout << "Default Constructor called for WrongCat" << std::endl;
-	this->setType("WrongCat");
+	this->type = "WrongCat";
 }
 
 WrongCat::WrongCat(WrongCat const &src): WrongAnimal()

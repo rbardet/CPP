@@ -6,14 +6,19 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/04/03 04:45:17 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/04/23 18:38:42 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex02
 
 SOURCES =	src/main.cpp \
-			src/ClapTrap.cpp \
+			src/Animal.cpp \
+			src/Dog.cpp \
+			src/Cat.cpp \
+			src/WrongCat.cpp \
+			src/WrongAnimal.cpp \
+			src/Brain.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)

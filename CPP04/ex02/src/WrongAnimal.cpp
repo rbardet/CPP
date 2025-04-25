@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 08:13:24 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/23 18:21:03 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/05 09:11:47 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongAnimal::WrongAnimal()
 {
 	std::cout << "Default Constructor called for WrongAnimal" << std::endl;
-	this->type = "WrongAnimal";
+	this->setType("WrongAnimal");
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &src)

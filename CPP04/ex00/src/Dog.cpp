@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:14:57 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 08:06:05 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:21:45 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog()
 {
 	std::cout << "Default Constructor called for Dog" << std::endl;
-	this->setType("Dog");
+	this->type = "Dog";
 }
 
 Dog::Dog(Dog const &src) : Animal()

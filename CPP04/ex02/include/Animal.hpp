@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 08:12:57 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/23 18:20:48 by rbardet-         ###   ########.fr       */
+/*   Created: 2025/04/04 08:04:15 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/04/23 18:35:26 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "iostream"
+#include <iostream>
 
-class WrongAnimal
+class Animal
 {
-protected:
+private:
 	std::string	type;
 public:
-	WrongAnimal();
-	WrongAnimal(WrongAnimal const &src);
-	WrongAnimal	operator=(WrongAnimal const &src);
-	virtual ~WrongAnimal();
+	Animal();
+	Animal(Animal const &src);
+	void	operator=(Animal const &src);
+	virtual ~Animal();
 
-	void				makeSound() const;
+	virtual void		makeSound() const = 0;
 	const std::string	&getType() const;
 	void				setType(std::string const type);
 };
-
 
 

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 08:04:36 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/05 09:11:25 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:21:33 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Animal::Animal()
 {
 	std::cout << "Default Constructor called for Animal" << std::endl;
-	this->setType("Animal");
+	this->type = "Animal";
 }
 
 Animal::Animal(Animal const &src)
