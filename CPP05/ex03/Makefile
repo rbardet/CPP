@@ -6,7 +6,7 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/04/26 05:21:51 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/04/26 06:46:37 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SOURCES =	src/main.cpp \
 			src/ShrubberyCreationForm.cpp \
 			src/RobotomyRequestForm.cpp \
 			src/PresidentialPardonForm.cpp \
+			src/Intern.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)
