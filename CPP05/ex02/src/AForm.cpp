@@ -57,7 +57,7 @@ void				AForm::execute(Bureaucrat const &executor) const
 {
 	if (this->getIsSigned() == false)
 		throw(AForm::NotSigned());
-	else if (this->getIsSigned() == false || executor.getGrade() > this->getGradeToExecute())
+	else if (executor.getGrade() > this->getGradeToExecute())
 		throw(AForm::CantExecute());
 	this->executeContract();
 }
