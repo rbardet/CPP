@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:55:09 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/26 00:52:35 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/26 02:25:24 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,51 @@
 
 int	main(void)
 {
-	Bureaucrat	b1("Monsieur A", 151);
-	std::cout << b1 << std::endl;
+	try
+	{
+		Bureaucrat	b1("Monsieur A", 151);
+		std::cout << b1 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat	b1("Monsieur B", -1);
+		std::cout << b1 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat	b1("Monsieur C", 12);
+		std::cout << b1 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat	b1("Monsieur D", 1);
+		std::cout << b1 << std::endl;
+		b1.Promote();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		Bureaucrat	b1("Monsieur E", 150);
+		std::cout << b1 << std::endl;
+		b1.Demote();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
