@@ -17,11 +17,9 @@
 class ScalarConverter
 {
 private:
-	/* data */
-public:
 	ScalarConverter();
 	~ScalarConverter();
-
+public:
 	static void	convert(const std::string &toConvert);
 };
 

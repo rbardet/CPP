@@ -13,7 +13,7 @@
 NAME = ex00
 
 SOURCES =	src/main.cpp \
-			src/ScalarConverter \
+			src/ScalarConverter.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)
