@@ -6,16 +6,13 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 06:53:44 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/27 05:06:41 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/28 05:45:04 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ScalarConverter.hpp"
 
-// int max : 2147483647
-// int min : -2147483648
-
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	if (ac != 2)
 	{
