@@ -1,23 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 07:04:31 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/28 07:47:28 by rbardet-         ###   ########.fr       */
+/*   Created: 2025/04/28 06:59:43 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/04/28 07:49:41 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Base.hpp"
+#pragma once
 
-int	main(void)
+#include <iostream>
+#include <ctime>
+
+class Base
 {
-	Base	*base = generate();
+public:
+	virtual ~Base() {};
+};
 
-	identify(base);
-	identify(*base);
-	delete base;
-	return (0);
-}
+Base	*generate(void);
+void	identify(Base *p);
+void	identify(Base &p);
+
+class A : public Base
+{
+public:
+	A() {};
+	~A() {};
+};
+
+class B : public Base
+{
+public:
+	B() {};
+	~B() {};
+};
+
+class C : public Base
+{
+public:
+	C() {};
+	~C() {};
+};
