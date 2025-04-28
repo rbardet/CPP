@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 06:57:57 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/28 06:13:13 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/28 06:33:53 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,25 @@ bool	specialCase(const std::string &toConvert)
 		return (false);
 }
 
+bool	isNotValidArg(const std::string &toConvert)
+{
+	size_t i;
+
+	if (toConvert.length() == 1)
+		return (false);
+	for (i = 0; i < toConvert.length(); i++)
+	{
+		if (isdigit(toConvert[i]))
+			break ;
+	}
+	if (i == toConvert.length())
+	{
+		std::cout << "Argument is not valid" << std::endl;
+		return (true);
+	}
+	return (false);
+}
+
 void	ScalarConverter::convert(const std::string &toConvert)
 {
 	char		toChar;
@@ -130,7 +149,7 @@ void	ScalarConverter::convert(const std::string &toConvert)
 	long		tmpInt;
 	long double tmpDouble;
 
-	if (specialCase(toConvert))
+	if (specialCase(toConvert) || isNotValidArg(toConvert))
 		return ;
 
 	if (toConvert.length() == 1 && isalpha(toConvert[0]))
