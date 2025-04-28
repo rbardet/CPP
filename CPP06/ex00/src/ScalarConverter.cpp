@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 06:57:57 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/28 06:04:39 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/28 06:13:13 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,27 @@ void	printResult(std::string c, std::string i, std::string f, std::string d)
 	<< "double: " << d << std::endl;
 }
 
+bool	specialCase(const std::string &toConvert)
+{
+	if (toConvert == "nan" || toConvert == "nanf")
+	{
+		printResult("Impossible", "Impossible", "nanf", "nan");
+		return (true);
+	}
+	else if (toConvert == "-inff" || toConvert == "-inf")
+	{
+		printResult("Impossible", "Impossible", "-inff", "-inf");
+		return (true);
+	}
+	else if (toConvert == "+inff" || toConvert == "+inf")
+	{
+		printResult("Impossible", "Impossible", "+inff", "+inf");
+		return (true);
+	}
+	else
+		return (false);
+}
+
 void	ScalarConverter::convert(const std::string &toConvert)
 {
 	char		toChar;
@@ -108,6 +129,9 @@ void	ScalarConverter::convert(const std::string &toConvert)
 	double		toDouble;
 	long		tmpInt;
 	long double tmpDouble;
+
+	if (specialCase(toConvert))
+		return ;
 
 	if (toConvert.length() == 1 && isalpha(toConvert[0]))
 	{
