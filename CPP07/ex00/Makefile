@@ -6,11 +6,11 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/04/28 08:02:40 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/04/28 08:16:28 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex00
 
 SOURCES =	src/main.cpp \
 

@@ -6,14 +6,14 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/04/28 07:34:50 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/04/29 05:27:39 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
 
 SOURCES =	src/main.cpp \
-			src/Base.cpp \
+
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)
