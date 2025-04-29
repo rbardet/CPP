@@ -1,5 +1,5 @@
 cpp module are 42 exercice where you take part of small exercice similar to the piscine but in the language C++
-cpp max grade is 100 not 125
+cpp max grade is 100
 ![image](https://github.com/user-attachments/assets/b1c021dd-1223-4dbb-b211-686edeefbef9)
 ![image](https://github.com/user-attachments/assets/17ca21f8-d6ed-45cc-bf2b-661e12e6aeda)
 ![image](https://github.com/user-attachments/assets/c775fd6f-a2d3-4f92-8ac4-c10eb1e5e30e)
