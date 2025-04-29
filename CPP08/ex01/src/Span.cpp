@@ -6,15 +6,15 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:21:40 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/29 11:40:15 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:52:29 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Span.hpp"
 
-Span::Span() : N(0) , i(0) {}
+Span::Span() : N(0) {}
 
-Span::Span(const Span &src) : N(src.N), i(src.i)
+Span::Span(const Span &src) : N(src.N)
 {
 	for (size_t i = 0; i < N; i++)
 		this->container[i] = src.container[i];
@@ -23,33 +23,42 @@ Span::Span(const Span &src) : N(src.N), i(src.i)
 void	Span::operator=(const Span &src)
 {
 	this->N = src.N;
-	this->i = src.i;
 	for (size_t i = 0; i < N; i++)
 		this->container[i] = src.container[i];
 }
 
 Span::~Span() {}
 
-Span::Span(const unsigned int &max) : N(N), i(0) {}
+Span::Span(const unsigned int &max) : N(max) {}
 
 void	Span::addNumber(const int &nb)
 {
-	if (i >= nb)
+	if (this->container.size() >= this->N)
 		throw(TooMuchValue());
 	else
-	{
-		this->container.push_back(N);
-		i++;
-	}
+		this->container.push_back(nb);
 }
 
-void	Span::shortestSpan(const int &a, const int &b) const
+int	Span::shortestSpan() const
 {
-
+	if (this->container.size() < 2)
+		throw(CantFind());
+	int	diff = diff = abs(this->container[0] - this->container[1]);
+	for (size_t i = 0; i < this->container.size(); i++)
+		for (size_t j = i + 1; j < this->container.size(); j++)
+			if (diff > abs(this->container[i] - this->container[j]))
+				diff = abs(this->container[i] - this->container[j]);
+	return (diff);
 }
 
-void	Span::longestSpan(const int &a, const int &b) const
+int	Span::longestSpan() const
 {
-
+	if (this->container.size() < 2)
+		throw(CantFind());
+	int	diff = diff = abs(this->container[0] - this->container[1]);
+	for (size_t i = 0; i < this->container.size(); i++)
+		for (size_t j = i + 1; j < this->container.size(); j++)
+			if (diff < abs(this->container[i] - this->container[j]))
+				diff = abs(this->container[i] - this->container[j]);
+	return (diff);
 }
-

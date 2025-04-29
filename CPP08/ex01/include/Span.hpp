@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:18:56 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/29 11:40:20 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/29 13:55:49 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
 
 class Span
 {
 private:
 	std::vector <int> container;
 	unsigned int	N;
-	unsigned int	i;
 public:
 	Span();
 	Span(const Span &src);
@@ -29,8 +29,9 @@ public:
 
 	Span(const unsigned int &N);
 	void	addNumber(const int &nb);
-	void	shortestSpan(const int &a, const int &b) const;
-	void	longestSpan(const int &a, const int &b) const;
+	int		shortestSpan() const;
+	int		longestSpan() const;
+	void	fillContainer();
 	class TooMuchValue : public std::exception
 	{
 		public:
