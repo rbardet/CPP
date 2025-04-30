@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:21:40 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/29 13:52:29 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/30 08:31:19 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,9 @@ int	Span::longestSpan() const
 			if (diff < abs(this->container[i] - this->container[j]))
 				diff = abs(this->container[i] - this->container[j]);
 	return (diff);
+}
+
+void	Span::fillContainer()
+{
+	std::
 }

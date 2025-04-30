@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:18:56 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/29 13:55:49 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/30 08:23:16 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 #include <iostream>
 #include <vector>
 #include <stdlib.h>
+#include <ctime>
+
+#define TOOMUCHVALUE "This container has already reached his max capacity"
+#define CANTFIND "Error: Couldn't find value in container"
 
 class Span
 {
@@ -37,7 +41,7 @@ public:
 		public:
 			const char* what() const throw()
 			{
-				return ("This container has already reached his max capacity");
+				return (TOOMUCHVALUE);
 			}
 	};
 	class CantFind : public std::exception
@@ -45,7 +49,7 @@ public:
 		public:
 			const char* what() const throw()
 			{
-				return ("Error: Couldn't find value in container");
+				return (CANTFIND);
 			}
 	};
 };
