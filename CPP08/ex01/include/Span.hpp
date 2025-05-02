@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:18:56 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/30 08:23:16 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/05/02 08:38:31 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <iostream>
 #include <vector>
-#include <stdlib.h>
+#include <cstdlib>
 #include <ctime>
 
 #define TOOMUCHVALUE "This container has already reached his max capacity"
