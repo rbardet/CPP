@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:18:56 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/05/02 08:38:31 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/05/02 10:34:50 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 	int		shortestSpan() const;
 	int		longestSpan() const;
 	void	fillContainer();
+	void	printContent() const;
 	class TooMuchValue : public std::exception
 	{
 		public:

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:21:40 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/05/02 08:59:25 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/05/02 10:34:52 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,22 @@ int	Span::longestSpan() const
 void	Span::fillContainer()
 {
 	srand(time(NULL));
-	for (std::vector<int>::iterator i = this->container.begin(); i < this->container.end(); i++)
-		this->addNumber(rand());
+	std::vector<int>::iterator end = this->container.begin() + this->N;
+	for (std::vector<int>::iterator iterator = this->container.begin(); iterator < end; iterator++)
+	{
+		try
+		{
+			this->addNumber(rand());
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+}
+
+void	Span::printContent() const
+{
+	for (size_t i = 0; i < this->container.size(); i++)
+		std::cout << this->container[i] << std::endl;;
 }
