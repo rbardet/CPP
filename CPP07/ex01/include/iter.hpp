@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:17:45 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/28 08:38:37 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/05/02 08:07:00 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 template <typename T> void iter(T *arr, size_t len, void(*ptr)(T))
 {
 	for (size_t i = 0; i < len; i++)
-	{
-		std::cout << arr[i] << " : " ;
 		ptr(arr[i]);
-	}
 	std::cout << std::endl;
 }

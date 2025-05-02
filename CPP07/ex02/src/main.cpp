@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:41:08 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/29 05:32:53 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/05/02 08:16:14 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,14 @@ int main(void)
 	}
 	try
 	{
+		Array<int> deepCopy(MAX_VAL);
+		Array<int> deepCopy2(numbers);
+		deepCopy = numbers;
 		numbers[2] = 10;
 		std::cout << numbers[2] << std::endl;
+		std::cout << mirror[2] << std::endl;
+		std::cout << deepCopy[2] << std::endl;
+		std::cout << deepCopy2[2] << std::endl;
 	}
 	catch(const std::exception& e)
 	{

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:21:40 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/30 08:31:19 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:08:38 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,5 @@ int	Span::longestSpan() const
 
 void	Span::fillContainer()
 {
-	std::
+
 }

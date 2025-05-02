@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:56:35 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/26 03:41:02 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/30 09:31:03 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,15 +91,7 @@ void	Bureaucrat::signForm(Form &form) const
 		<< " because its already signed" << std::endl;
 		return ;
 	}
-	try
-	{
-		form.beSigned(*this);
-		if (form.getIsSigned() == true)
-			std::cout << this->getName() << " signed " << form.getName() << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
+	form.beSigned(*this);
+	if (form.getIsSigned() == true)
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
 }

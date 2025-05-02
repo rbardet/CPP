@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:55:09 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/26 02:25:24 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/30 09:21:40 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ int	main(void)
 	}
 	try
 	{
+		Bureaucrat	b2("Monsieur F", 92);
 		Bureaucrat	b1("Monsieur D", 1);
 		std::cout << b1 << std::endl;
+		std::cout << b2 << std::endl;
 		b1.Promote();
 	}
 	catch(const std::exception& e)

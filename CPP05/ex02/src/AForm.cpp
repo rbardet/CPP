@@ -50,16 +50,10 @@ void				AForm::beSigned(const Bureaucrat &employee)
 			this->is_signed = true;
 	}
 	else
-		throw(AForm::GradeTooLowExecption());
-}
-
-void				AForm::execute(Bureaucrat const &executor) const
-{
-	if (this->getIsSigned() == false)
-		throw(AForm::NotSigned());
-	else if (executor.getGrade() > this->getGradeToExecute())
-		throw(AForm::CantExecute());
-	this->executeContract();
+	{
+		std::cout << employee.getName() << " couldn't sign "
+		<< this->name << " because grade is too low" << std::endl;
+	}
 }
 
 const std::string	&AForm::getName() const

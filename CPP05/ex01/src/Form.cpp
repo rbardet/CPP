@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 02:26:50 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/26 03:39:56 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/30 09:31:21 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ void				Form::beSigned(const Bureaucrat &employee)
 			this->is_signed = true;
 	}
 	else
-		throw(Form::GradeTooLowExecption());
+	{
+		std::cout << employee.getName() << " couldn't sign "
+		<< this->name << " because grade is too low" << std::endl;
+	}
 }
 
 const std::string	&Form::getName() const

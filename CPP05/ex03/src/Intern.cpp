@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 05:49:10 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/26 06:47:56 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/04/30 09:40:25 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,13 @@ AForm	*Intern::makeForm(std::string formName, std::string Target)
 	std::string	goodForm[3] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
 	AForm*(Intern::*ptr[3])(std::string) = {&Intern::newPresidentialPardonForm, &Intern::newRobotomyRequestForm, &Intern::newShrubberyCreationForm};
 	for (size_t i = 0; i < 3; i++)
+	{
 		if (formName == goodForm[i])
+		{
+			std::cout << "Intern creates " << goodForm[i] << std::endl;
 			return (this->*ptr[i])(Target);
+		}
+	}
 	throw (Intern::impossibleForm());
 }
 
