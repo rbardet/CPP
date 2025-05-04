@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 12:54:53 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/05/02 12:55:14 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/05/04 23:53:12 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,7 @@ template<typename T>
 Array<T>::Array(const unsigned int &_size) : _size(_size) {this->array = new T[this->_size];}
 
 template<typename T>
-const unsigned int &Array<T>::size() const
-{
-	return(this->_size);
-}
+const unsigned int &Array<T>::size() const {return(this->_size);}
 
 template<typename T>
 T &Array<T>::operator[](const int &pos)

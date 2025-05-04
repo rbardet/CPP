@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 08:02:16 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/05/02 08:18:48 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/05/04 23:51:12 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ template <typename T> void swap(T &a, T &b)
 	b = tmp;
 }
 
-template <typename T> T min(T &a, T &b)
+template <typename T> T &min(T &a, T &b)
 {
 	if (b <= a)
 		return (b);
@@ -32,7 +32,7 @@ template <typename T> T min(T &a, T &b)
 		return (a);
 }
 
-template <typename T> T max (T &a, T &b)
+template <typename T> T &max (T &a, T &b)
 {
 	if (b >= a)
 		return (b);
