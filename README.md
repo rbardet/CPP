@@ -5,3 +5,5 @@ cpp max grade is 100
 ![image](https://github.com/user-attachments/assets/c775fd6f-a2d3-4f92-8ac4-c10eb1e5e30e)
 ![image](https://github.com/user-attachments/assets/a04a7c8c-b71c-482f-b10f-552f4bb29be7)
 ![image](https://github.com/user-attachments/assets/0adbc933-970c-4ccb-8e78-d449e10cd312)
+![image](https://github.com/user-attachments/assets/f26d7fcd-049f-493f-9389-f43cbbf1e0d9)
+![image](https://github.com/user-attachments/assets/abf6d847-1a52-47bf-a061-5261e2cfa50d)
