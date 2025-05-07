@@ -36,12 +36,9 @@ BitcoinExchange::BitcoinExchange(std::ifstream &dataBase)
 			i++;
 			continue ;
 		}
-		pos = line.find(',');
+		pos = line.find(',' || '|');
 		if (pos == std::string::npos)
-		{
-			std::cout << WRONGFORMAT << std::endl;
-			continue;
-		}
+			pos = line.size();
 		date = line.substr(0, pos);
 		value = atof(line.substr(pos + 1).c_str());
 		this->container[date] = value;
@@ -51,39 +48,71 @@ BitcoinExchange::BitcoinExchange(std::ifstream &dataBase)
 
 bool BitcoinExchange::isValidDate(std::string line) const
 {
+	size_t	posYear = 0;
 
+	posYear = line.find('-');
+	if (posYear == std::string::npos)
+		return (false);
+	int year = atoi(line.substr(0, posYear).c_str());
+	if (year < 1000 || year > 9999)
+		return (false);
+	size_t posMonth = line.find(line.substr(posYear + 1, line.size()));
+	if (posMonth == std::string::npos)
+		return (false);
+	int month = atoi(line.substr(posYear + 1, posMonth).c_str());
+	if (month < 1 || month > 12)
+		return (false);
+	int day = atoi(line.substr(posMonth + 1, line.size()).c_str());
+	if (day < 1 || day > 31 || (day > 29 && month == 2 && year % 4 != 0)) // february
+		return (false);
+	if ((day > 30 && month % 2 == 0) || month != 8 || month != 10 || month != 12)
+		return (false);
+	return (true);
 }
 
-bool BitcoinExchange::isValidFormat(std::string line) const
+bool BitcoinExchange::isValidFormat(std::string date, float value) const
 {
 	size_t pos = 0;
-	float tmp = 0;
 
-	pos = line.find('|');
+	pos = date.find('|');
 	if (pos == std::string::npos)
 	{
 		std::cout << WRONGFORMAT << std::endl;
 		return (false);
 	}
 
-	tmp = atof(line.substr(pos + 1).c_str());
-	if (tmp < 0)
+	if (value < 0)
 	{
 		std::cout << TOOLOW << std::endl;
 		return (false);
 	}
-	else if (tmp > 1000)
+	else if (value > 1000)
 	{
 		std::cout << TOOLARGE << std::endl;
 		return (false);
 	}
 
-
+	if (!isValidDate(date))
+	{
+		std::cout << WRONGDATE << date << std::endl;
+		return (false);
+	}
+	return (true);
 }
 
-void BitcoinExchange::ExchangeRate(std::ifstream &dataBase) const
+void BitcoinExchange::ExchangeRate(const BitcoinExchange &input) const
 {
+	std::string line;
 
+	for (std::map<std::string, float>::const_iterator itInput = input.container.begin(); itInput != input.container.end(); ++itInput)
+	{
+		if (this->isValidFormat(itInput->first, itInput->second))
+		{
+			for (std::map<std::string, float>::const_iterator itDb = this->container.begin(); itDb != this->container.end(); ++itDb)
+				if (line == itDb->first)
+					std::cout << itDb->first << " => " << line.substr() << std::endl;
+		}
+	}
 }
 
 void BitcoinExchange::printContent() const

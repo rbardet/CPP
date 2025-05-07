@@ -22,8 +22,10 @@ int	main(int ac, char **av)
 	}
 	try
 	{
-		std::ifstream dataBase("data.csv");
+		std::ifstream dataBase(DBSOURCE);
 		BitcoinExchange btc(dataBase);
+		std::ifstream av[1];
+		BitcoinExchange input(av[1]);
 		btc.printContent();
 	}
 	catch(const std::exception& e)

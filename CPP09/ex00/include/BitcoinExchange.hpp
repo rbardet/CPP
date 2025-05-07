@@ -19,11 +19,14 @@
 #include <cstdlib>
 #include <iomanip>
 
+#define DBSOURCE "data.csv"
+
 #define NEGATIVEVALUE "Error not a positive number."
 #define BADINPUT "Error: bad input."
 #define TOOLARGE "Error: too large number."
 #define CANTOPEN "Error: could not open file."
-#define WRONGFORMAT "Error: invalid format (<date>, <value>)."
+#define WRONGFORMAT "Error: invalid format (<date> | <value>)."
+#define WRONGDATE "Error: bad input => "
 #define TOOLOW "Error: not a positive number."
 
 class BitcoinExchange
@@ -37,8 +40,8 @@ public:
 	~BitcoinExchange();
 
 	BitcoinExchange(std::ifstream &dataBase);
-	void	ExchangeRate(std::ifstream &dataBase) const;
-	bool	isValidFormat(std::string line) const;
+	void	ExchangeRate(const BitcoinExchange &input) const;
+	bool	isValidFormat(std::string date, float value) const;
 	bool	isValidDate(std::string line) const;
 	void	printContent() const;
 	class CantOpenFile : public std::exception
