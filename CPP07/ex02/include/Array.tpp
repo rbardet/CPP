@@ -45,7 +45,7 @@ template<typename T>
 const unsigned int &Array<T>::size() const {return(this->_size);}
 
 template<typename T>
-T &Array<T>::operator[](const int &pos)
+T &Array<T>::operator[](const int &pos) const
 {
 	if (pos < 0 || static_cast<unsigned int>(pos) >= this->_size)
 		throw(InvalidIndex());

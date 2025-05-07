@@ -28,7 +28,7 @@ public:
 
 	Array(const unsigned int &_size);
 	const unsigned int	&size() const;
-	T					&operator[](const int &pos);
+	T					&operator[](const int &pos) const;
 	class InvalidIndex : public std::exception
 	{
 		public:
