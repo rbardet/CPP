@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 05:36:04 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/04/29 11:16:45 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/06/27 02:23:43 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(void)
 	B.push_back(3);
 	B.push_back(15);
 	B.push_back(1234);
+	const std::vector <char> C = A;
+	easyfind(C, 'c');
 	easyfind(A, 'c');
 	easyfind(A, 'z');
 	easyfind(B, 15);
