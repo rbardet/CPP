@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:11:55 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/05/07 18:30:49 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/07/01 12:49:26 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #define NEGATIVEVALUE "Error not a positive number."
 #define BADINPUT "Error: bad input."
-#define TOOLARGE "Error: too large number."
+#define TOOLARGE "Error: too large a number."
 #define CANTOPEN "Error: could not open file."
 #define WRONGFORMAT "Error: invalid format (<date> | <value>)."
 #define WRONGDATE "Error: bad input => "
@@ -32,14 +32,14 @@
 class BitcoinExchange
 {
 private:
-	std::map<std::string, float>	container;
+	std::multimap<std::string, float>	container;
 public:
 	BitcoinExchange();
 	BitcoinExchange(const BitcoinExchange &src);
 	void	operator=(const BitcoinExchange &src);
 	~BitcoinExchange();
 
-	BitcoinExchange(std::ifstream &dataBase);
+	BitcoinExchange(std::ifstream &dataBase, const char &limiter);
 	void	ExchangeRate(const BitcoinExchange &input) const;
 	bool	isValidFormat(std::string date, float value) const;
 	bool	isValidDate(std::string line) const;

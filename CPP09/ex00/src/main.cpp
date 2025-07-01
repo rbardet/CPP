@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:10:51 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/05/07 18:00:18 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/07/01 14:28:46 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	main(int ac, char **av)
 	try
 	{
 		std::ifstream dataBase(DBSOURCE);
-		BitcoinExchange btc(dataBase);
-		std::ifstream av[1];
-		BitcoinExchange input(av[1]);
-		btc.printContent();
+		BitcoinExchange btc(dataBase, ',');
+		std::ifstream src(av[1]);
+		BitcoinExchange input(src, '|');
+		btc.ExchangeRate(input);
 	}
 	catch(const std::exception& e)
 	{
