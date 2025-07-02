@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 11:25:52 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/07/02 18:11:28 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:44:01 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static bool	isValidArg(const std::string &av)
 	std::string scam = " ";
 	std::string::const_iterator prev = scam.begin();
 
+	int nbOp = 0;
+	int nbNb = 0;
 	for (std::string::const_iterator it = av.begin(); it != av.end(); it++)
 	{
 		if(it != av.begin())
@@ -48,15 +50,26 @@ static bool	isValidArg(const std::string &av)
 
 		if ((isOperator(*it) || isdigit(*it)) && *prev != ' ')
 			return (false);
+
+		if (isOperator(*it))
+			nbOp++;
+		else if (isdigit(*it))
+			nbNb++;
 	}
 
+	if ((nbNb - 1) != nbOp)
+		throw(invalidNotation());
 	return (true);
 }
 
 static void	logicalOp(std::stack<int> &st, int op)
 {
+	if (st.empty())
+		throw(invalidNotation());
 	int nb1 = st.top();
 	st.pop();
+	if (st.empty())
+		throw(invalidNotation());
 	int nb2 = st.top();
 	st.pop();
 
@@ -96,7 +109,7 @@ void	RPN::reversePolish(const char *av)
 	for (std::string::const_iterator it = tmp.begin(); it != tmp.end(); it++)
 	{
 		if (isdigit(*it))
-			st.push(atoi(it.base()));
+			st.push(std::atoi(it.base()));
 		else if (isOperator(*it))
 			logicalOp(st, *it);
 	}

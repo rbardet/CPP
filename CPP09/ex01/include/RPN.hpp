@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 11:25:27 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/07/02 17:59:17 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/07/02 18:23:14 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #define WRONGARGNB "Error: only 1 arg allowed"
 #define WRONGARG "Error: character allowed (number between [0-9], arithmetic operator[+, -, *, /]) with a space between arg"
 #define ZERODIVISION "Error: Couldn't perform the operation due to a division by 0"
-
+#define INVALIDNOTATION "Error: Invalid reverse polish notation"
 class RPN
 {
 public:
@@ -46,5 +46,13 @@ class zeroDivision : public std::exception
 		const char* what() const throw()
 		{
 			return (ZERODIVISION);
+		}
+};
+class invalidNotation : public std::exception
+{
+	public:
+		const char* what() const throw()
+		{
+			return (INVALIDNOTATION);
 		}
 };
