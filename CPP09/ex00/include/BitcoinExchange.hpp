@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:11:55 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/07/02 11:13:02 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/07/02 13:25:36 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <algorithm>
 #include <map>
 #include <fstream>
-#include <cstdlib>
 #include <iomanip>
 #include <ctime>
 
@@ -41,14 +40,14 @@ typedef struct t_close
 class BitcoinExchange
 {
 private:
-	std::multimap<std::string, float>	container;
-public:
 	BitcoinExchange();
 	BitcoinExchange(const BitcoinExchange &src);
 	void	operator=(const BitcoinExchange &src);
+	std::multimap<std::string, float>	container;
+public:
+	BitcoinExchange(std::ifstream &dataBase, const char &limiter);
 	~BitcoinExchange();
 
-	BitcoinExchange(std::ifstream &dataBase, const char &limiter);
 	void	ExchangeRate(const BitcoinExchange &input) const;
 	bool	isValidFormat(std::string date, float value) const;
 	bool	isValidDate(std::string line) const;
