@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:12:03 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/07/01 14:24:35 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/07/02 11:13:13 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ bool BitcoinExchange::isValidDate(std::string line) const
 	int day = atoi(line.substr(8, line.size()).c_str());
 	if (month == 2)
 	{
-		if ((day < 1 || day > 29) || (day > 28 && (year % 4 != 0)) || (day > 28 && (year % 100 == 0 && year % 400 != 0)))
+		if ((day < 1 || day > 29) || (day > 28 && (year % 4 != 0)) || (day > 28 && (year % 4 == 0 && year % 100 == 0 && year % 400 != 0)))
 			return (false);
 		else
 			return (true);
@@ -80,6 +80,12 @@ bool BitcoinExchange::isValidDate(std::string line) const
 
 bool BitcoinExchange::isValidFormat(std::string date, float value) const
 {
+	if (!isValidDate(date))
+	{
+		std::cout << WRONGDATE << date << std::endl;
+		return (false);
+	}
+
 	if (value < 0)
 	{
 		std::cout << TOOLOW << " => " << value << std::endl;
@@ -90,27 +96,70 @@ bool BitcoinExchange::isValidFormat(std::string date, float value) const
 		std::cout << TOOLARGE << " => " << value << std::endl;
 		return (false);
 	}
-
-	if (!isValidDate(date))
-	{
-		std::cout << WRONGDATE << date << std::endl;
-		return (false);
-	}
 	return (true);
+}
+
+time_t BitcoinExchange::dateToTimestamp(const std::string &date)
+{
+	time_t rawtime;
+	tm *timeinfo;
+
+	time ( &rawtime );
+
+	timeinfo = localtime ( &rawtime );
+
+	timeinfo->tm_year = atoi(date.substr(0, 4).c_str()) - 1900;
+	timeinfo->tm_mon = atoi(date.substr(5, 6).c_str()) - 1;
+	timeinfo->tm_mday = atoi(date.substr(8, 9).c_str());
+	timeinfo->tm_hour = 0;
+	timeinfo->tm_min = 0;
+	timeinfo->tm_sec = 0;
+
+	return (timegm(timeinfo));
+}
+
+void	BitcoinExchange::findClosest(t_close *closest, const std::string &itDate, const float &itValue, std::string &date) const
+{
+	time_t oldDate = dateToTimestamp(closest->date);
+	time_t newDate = dateToTimestamp(itDate);
+	time_t actualDate = dateToTimestamp(date);
+
+	if (std::abs(actualDate - oldDate) > std::abs(actualDate - newDate))
+	{
+		closest->date = itDate;
+		closest->value = itValue;
+	}
+}
+
+void	BitcoinExchange::findExchangeRate(std::string date, float value) const
+{
+	t_close	closest;
+
+	for (std::map<std::string, float>::const_iterator itDb = this->container.begin(); itDb != this->container.end(); ++itDb)
+	{
+		if (closest.date.empty())
+		{
+			closest.date = itDb->first;
+			closest.value = itDb->second;
+		}
+
+		if (itDb->first + ' ' == date)
+		{
+			std::cout << date << "=> " << value << " = " << value * itDb->second << std::endl;
+			return ;
+		}
+		else
+			this->findClosest(&closest, itDb->first, itDb->second, date);
+	}
+	std::cout << date << "=> " << value << " = " << value * closest.value << std::endl;
 }
 
 void BitcoinExchange::ExchangeRate(const BitcoinExchange &input) const
 {
-	std::string line;
-
 	for (std::map<std::string, float>::const_iterator itInput = input.container.begin(); itInput != input.container.end(); ++itInput)
 	{
 		if (this->isValidFormat(itInput->first, itInput->second))
-		{
-			for (std::map<std::string, float>::const_iterator itDb = this->container.begin(); itDb != this->container.end(); ++itDb)
-				if (line == itDb->first)
-					std::cout << itDb->first << " => " << line.substr() << std::endl;
-		}
+			this->findExchangeRate(itInput->first, itInput->second);
 	}
 }
 

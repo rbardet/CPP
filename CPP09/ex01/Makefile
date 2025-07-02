@@ -6,13 +6,14 @@
 #    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/05/02 14:08:28 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/07/02 11:21:21 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = RPN
 
 SOURCES =	src/main.cpp \
+			src/RPN.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)

@@ -6,7 +6,7 @@
 /*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:10:51 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/07/01 14:28:46 by rbardet-         ###   ########.fr       */
+/*   Updated: 2025/07/01 17:04:53 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	main(int ac, char **av)
 {
-	(void)av;
 	if (ac != 2)
 	{
 		std::cout << CANTOPEN << std::endl;
