@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robin <robin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:12:03 by rbardet-          #+#    #+#             */
-/*   Updated: 2025/07/03 10:44:49 by robin            ###   ########.fr       */
+/*   Updated: 2025/07/03 13:20:10 by rbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ void	BitcoinExchange::findClosest(t_close *closest, const std::string &itDate, c
 	time_t newDate = dateToTimestamp(itDate);
 	time_t actualDate = dateToTimestamp(date);
 
+	if (newDate > actualDate)
+		return ;
 	if (std::abs(actualDate - oldDate) > std::abs(actualDate - newDate))
 	{
 		closest->date = itDate;
@@ -151,7 +153,10 @@ void	BitcoinExchange::findExchangeRate(std::string date, float value) const
 		else
 			this->findClosest(&closest, itDb->first, itDb->second, date);
 	}
-	std::cout << date << "=> " << value << " = " << value * closest.value << std::endl;
+	if (dateToTimestamp(date) < dateToTimestamp(closest.date))
+		std::cout << "Error : Bitcoin didn't exist at this date => " << date << std::endl;
+	else
+		std::cout << date << "=> " << value << " = " << value * closest.value << std::endl;
 }
 
 void BitcoinExchange::ExchangeRate(const BitcoinExchange &input) const

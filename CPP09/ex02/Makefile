@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: robin <robin@student.42.fr>                +#+  +:+       +#+         #
+#    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/07/03 10:47:04 by robin            ###   ########.fr        #
+#    Updated: 2025/07/03 15:41:22 by rbardet-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 
 SOURCES =	src/main.cpp \
+			src/PmergeMe.cpp \
 
 OBJ_DIR = obj
 OBJECTS = $(SOURCES:src/%.cpp=$(OBJ_DIR)/%.o)
