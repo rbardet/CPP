@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+         #
+#    By: robin <robin@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 15:15:54 by rbardet-          #+#    #+#              #
-#    Updated: 2025/05/02 12:48:38 by rbardet-         ###   ########.fr        #
+#    Updated: 2025/07/03 10:47:04 by robin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = PmergeMe
 
 SOURCES =	src/main.cpp \
 
