@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rbardet- <rbardet-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 08:14:57 by rbardet-          #+#    #+#             */
+/*   Updated: 2025/04/23 17:38:07 by rbardet-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/Dog.hpp"
+
+Dog::Dog()
+{
+	std::cout << "Default Constructor called for Dog" << std::endl;
+	this->setType("Dog");
+	this->ideas = new Brain();
+}
+
+Dog::Dog(Dog const &src)
+{
+	std::cout << "Copy Constructor called for Dog" << std::endl;
+	this->setType("Dog");
+	this->ideas = new Brain (*src.ideas);
+}
+
+void	Dog::operator=(Dog const &src)
+{
+	std::cout << "Operator assignement called for Dog" << std::endl;
+	delete this->ideas;
+	this->ideas = new Brain (*src.ideas);
+}
+
+Dog::~Dog()
+{
+	std::cout << "Destructor called for Dog" << std::endl;
+	delete	ideas;
+}
+
+void	Dog::makeSound() const
+{
+	std::cout << "Wouf wouf" << std::endl;
+}
+
+void	Dog::fill_ideas(std::string ideas)
+{
+	this->ideas->fill_ideas(ideas);
+}
+
+void	Dog::get_ideas() const
+{
+	for (size_t i = 0; i < 100; i++)
+		std::cout << this->ideas->get_ideas(i) << std::endl;
+}
